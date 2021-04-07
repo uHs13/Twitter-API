@@ -1,0 +1,16 @@
+.button {
+
+    background: rgb(29, 161, 242);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 28px;
+    min-height: 49px;
+    cursor: pointer;
+    box-sizing: border-box;
+    min-width: calc(78.89px);
+    border-radius: 9999px;
+    border-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="res/img/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="res/bootstrap/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="res/css/body/body.css">
+    <link rel="stylesheet" href="res/css/form/form.css">
+    <link rel="stylesheet" href="res/css/box/box.css">
+
+</head>
+
+<body>
+    <main class='container-fluid'>
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/twitter/">
+                    <img src="res/img/logo.png" alt="" width="30" height="24">
+                    <span class='whiteText'>Twitter API</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-info" href="https://twitter.com" target='_blank'>Twitter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link whiteText" href="/twitter/tweet-media">Tweet and Image</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <div class="form-check form-switch" id='switch'>
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" {% if
+                                content.blackMode=='1' %} checked {% endif %}>
+                            <label class="form-check-label whiteText" for="flexSwitchCheckChecked">Black Mode</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>

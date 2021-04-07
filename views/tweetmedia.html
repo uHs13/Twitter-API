@@ -1,0 +1,76 @@
+{{include('header.twig')}}
+<section class='container' id='box'>
+
+    {% if error != '' %}
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{error}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endif %}
+
+    {% if success != '' %}
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{success}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endif %}
+
+    <form method='POST' class='m-3'>
+        <div class='form-group'>
+            <textarea type="text" class='form-control' placeholder="What´s happening?" name='tweet'
+                rows="4">{{content.tweet}}</textarea>
+            <span style='float: right' id='characterCount' class='whiteText'>0/280</span>
+        </div>
+        <div class='d-none'>
+            <input type="text" name='blackMode' value='{{content.blackMode}}'>
+        </div>
+        <div class='form-group'>
+            <input type="file" class='form-control'>
+        </div>
+        <div class='mt-2'>
+            <img src="res/img/boxed-bg.jpg" alt="Default" class='rounded mx-auto d-block img-thumbnail' width="200"
+                height="200" id='image-preview' style='cursor:pointer;'>
+            <input type="text" name='base64' class='d-none'>
+        </div>
+        <div class='text-center'>
+            <button class='button'>Tweet</button>
+        </div>
+    </form>
+
+</section>
+
+<script>
+
+    document.querySelector('[type=file]').addEventListener('change', function () {
+
+        let file = new FileReader();
+
+        file.onload = () => {
+
+            document.querySelector('#image-preview').src = file.result;
+            document.querySelector('[name=base64]').value = file.result;
+
+        };
+
+        file.onerro = (e) => {
+
+            console.error(e);
+
+        };
+
+        if (this.files[0]) file.readAsDataURL(this.files[0]);
+
+    });
+
+    document.querySelector('#image-preview').addEventListener('click', () => {
+
+        document.querySelector('[type=file]').click();
+
+    });
+
+</script>
+{{include('footer.twig')}}

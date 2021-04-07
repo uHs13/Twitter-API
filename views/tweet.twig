@@ -1,0 +1,37 @@
+{{include('header.twig')}}
+<section class='container' id='box'>
+
+    {% if error != '' %}
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{error}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endif %}
+
+    {% if success != '' %}
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{success}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endif %}
+
+    <form method='POST'>
+        <div class='form-group'>
+            <textarea type="text" class='form-control' placeholder="What´s happening?" name='tweet'
+                rows="8">{{content.tweet}}</textarea>
+            <span style='float: right' id='characterCount' class='whiteText'>0/280</span>
+        </div>
+        <div class='d-none'>
+            <input type="text" name='blackMode' value='{{content.blackMode}}'>
+        </div>
+        <div class='text-center'>
+            <button class='button'>Tweet</button>
+        </div>
+    </form>
+
+</section>
+{{include('footer.twig')}}

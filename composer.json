@@ -1,0 +1,22 @@
+{
+    "name": "heitor.souza/twitter",
+    "description": "testing twitter API",
+    "authors": [
+        {
+            "name": "Heitor Souza",
+            "email": "heitorhenriquedias@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "slim/slim": "3.*",
+        "twig/twig": "^3.0",
+        "slim/psr7": "dev-master",
+        "abraham/twitteroauth": "2.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Project\\": "vendor\\project\\"
+        }
+    }
+}
