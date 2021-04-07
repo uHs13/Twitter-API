@@ -25,7 +25,7 @@ class Twitter extends Model
 		);
 
 		$this->setaccessSecret(
-			'6insert the key'
+			'insert the key'
 		);
 
 		$this->verifyCredentials();
